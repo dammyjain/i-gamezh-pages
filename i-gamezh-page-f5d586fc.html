@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>爱游戏 · 游戏资讯与日常参考</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #faf7f2;
+            font-family: 'Georgia', 'Times New Roman', '宋体', 'SimSun', serif;
+            color: #2c2c2c;
+            line-height: 1.7;
+            padding: 2rem 1.2rem;
+            max-width: 860px;
+            margin: 0 auto;
+        }
+
+        /* hero 横幅 — 杂志式大标题区 */
+        .hero {
+            margin-bottom: 2.8rem;
+            padding-bottom: 1.2rem;
+            border-bottom: 2px solid #dacfc4;
+        }
+
+        .hero h1 {
+            font-size: 2.8rem;
+            font-weight: 400;
+            letter-spacing: 0.06em;
+            color: #3a3028;
+            line-height: 1.2;
+            margin-bottom: 0.6rem;
+        }
+
+        .hero .subhead {
+            font-size: 1.05rem;
+            color: #7f7062;
+            font-style: italic;
+            border-left: 4px solid #b8a89a;
+            padding-left: 1rem;
+            margin-top: 0.3rem;
+        }
+
+        /* 背景说明——像是杂志编者按 */
+        .background-note {
+            background: #efe9e0;
+            padding: 1.4rem 1.8rem;
+            border-radius: 2px;
+            margin-bottom: 2.6rem;
+            font-size: 0.98rem;
+            color: #3f362e;
+            box-shadow: 0 1px 4px rgba(0, 0, 0, 0.02);
+        }
+
+        .background-note strong {
+            color: #4e3f32;
+            font-weight: 600;
+        }
+
+        /* 三段自然介绍 —— 段落 + 引用块 / 提示框穿插 */
+        .section-block {
+            margin-bottom: 2.2rem;
+        }
+
+        .section-block h2 {
+            font-size: 1.4rem;
+            font-weight: 400;
+            margin-bottom: 0.8rem;
+            color: #4b3e32;
+            border-bottom: 1px dashed #d6cbbf;
+            padding-bottom: 0.3rem;
+            letter-spacing: 0.02em;
+        }
+
+        .section-block p {
+            margin-bottom: 1.2rem;
+            text-indent: 2em;
+        }
+
+        /* 引用块 / 提示框 */
+        .pullquote {
+            background: #f2ede7;
+            border-left: 6px solid #b09b88;
+            padding: 1rem 1.6rem;
+            margin: 1.4rem 0 1.8rem 0;
+            font-style: italic;
+            color: #4f443a;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.02);
+            font-size: 1.02rem;
+            line-height: 1.6;
+            text-indent: 0;
+        }
+
+        .tip-box {
+            background: #e7dfd5;
+            border-radius: 4px;
+            padding: 0.9rem 1.4rem;
+            margin: 1.4rem 0 1.6rem 0;
+            font-size: 0.96rem;
+            color: #3d352d;
+            border: 1px solid #dacfc4;
+            text-indent: 0;
+        }
+
+        .tip-box span {
+            font-weight: 600;
+            color: #5d4b39;
+        }
+
+        /* 内嵌链接样式 */
+        a {
+            color: #735e4b;
+            text-decoration: none;
+            border-bottom: 1px dotted #b09b88;
+            transition: border-bottom 0.2s, color 0.2s;
+        }
+
+        a:hover {
+            color: #4e3b2b;
+            border-bottom: 1px solid #735e4b;
+        }
+
+        /* 页尾访问提示 —— 干净，杂志脚注感 */
+        .footer-note {
+            margin-top: 3rem;
+            padding-top: 1.2rem;
+            border-top: 1px solid #dacfc4;
+            font-size: 0.92rem;
+            color: #7a6c5e;
+            line-height: 1.7;
+            text-align: left;
+            letter-spacing: 0.02em;
+        }
+
+        .footer-note a {
+            font-weight: 500;
+        }
+
+        /* 响应式细节 */
+        @media (max-width: 600px) {
+            body {
+                padding: 1.4rem 1rem;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero .subhead {
+                font-size: 0.95rem;
+                padding-left: 0.8rem;
+            }
+
+            .background-note {
+                padding: 1rem 1.2rem;
+            }
+
+            .pullquote {
+                padding: 0.8rem 1rem;
+                margin-left: 0;
+                margin-right: 0;
+            }
+
+            .section-block h2 {
+                font-size: 1.2rem;
+            }
+        }
+
+        @media (max-width: 400px) {
+            .hero h1 {
+                font-size: 1.6rem;
+            }
+
+            .section-block p {
+                text-indent: 1.5em;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 首页横幅 -->
+    <div class="hero">
+        <h1>爱游戏 · 日常查询与延伸</h1>
+        <div class="subhead">游戏资讯的对照、检索与随笔 —— 一个安静的参考角落</div>
+    </div>
+
+    <!-- 背景说明 -->
+    <div class="background-note">
+        <strong>编者按</strong> 许多时候我们打开浏览器，只是为了快速查询一个游戏的上线时间、某个系列的背景，或者单纯想看看其他玩家对某款作品的感受。<strong>爱游戏</strong>正是从这些日常需求里生长出来的：不追求头条速度，而是把资讯整理成可对照、可延伸阅读的形态。本专题围绕“查询 · 对照 · 延伸”三条线索，聊聊这个站点的定位与使用场景。
+    </div>
+
+    <!-- 三段自然介绍 -->
+    <div class="section-block">
+        <h2>❶ 查询：从一条短讯开始</h2>
+        <p>晚上想查一下某个独立游戏的具体发售日期，或者想确认某一个 DLC 的更新范围——这时候不需要长篇评测，只需要干净的信息和准确的来源。<a href="https://i-gamezh.com.cn">爱游戏</a>的索引模块把新闻、预告、版本更新按时间线排列，同时附有简短的背景备注。这种结构尤其适合“我就看一眼”的场景，不会淹没在信息流里。</p>
+        <div class="pullquote">
+            “有时候只是想知道‘这个游戏什么时候上线’，结果翻了好几篇评测才找到日期——爱游戏把这种高频查询单独拎了出来。”
+        </div>
+        <p>另外，站内对每个游戏条目都做了多平台标注，方便快速对比 PC、主机、移动端的状态。日常用起来，比翻社交媒体更直接。</p>
+    </div>
+
+    <div class="section-block">
+        <h2>❷ 对照：并排看，差异自然浮现</h2>
+        <p>同一个系列的不同作品、同一时期的竞品、或者同一开发者的历年项目——对照阅读往往能发现单独看时忽略的线索。<a href="https://i-gamezh.com.cn">爱游戏</a>在页面里设计了轻量的对照表格（比如发行时间、评分范围、类型标签），但又不让页面变成枯燥的数据堆砌。每个对照区都配了一段简短的“为什么这样对比”的说明，保留阅读的节奏。</p>
+        <div class="tip-box">
+            <span>🔍 实用提示</span> 习惯用大屏的用户可以同时打开两个对照页面并排看；手机端则建议用“收藏对照”功能（需注册，免费），下次直接调出对比列表。
+        </div>
+        <p>这种对照不止于数据——也包括玩家社区里对同一事件的不同反应摘要。但要注意，这些摘录只陈述观点，不站队，保持信息的中性。</p>
+    </div>
+
+    <div class="section-block">
+        <h2>❸ 延伸阅读：当兴趣开始蔓延</h2>
+        <p>很多次，我本来只是想查一个游戏的配置要求，结果被某条关联文章吸引，最后读完了整个开发者访谈。这就是延伸阅读的乐趣。<a href="https://i-gamezh.com.cn">爱游戏</a>在每个条目下面都会推荐 2–3 篇“如果你对 XX 感兴趣，也许也会想了解”的内容，关联逻辑基于类型、题材、或制作团队的亲缘关系，而不是简单的标签匹配。</p>
+        <p>这些推荐文章通常篇幅不长，大概 500–800 字，适合碎片时间。偶尔也会有长文专题（比如对某一经典系列的回顾），不过那种更像杂志的增刊，不定期更新。</p>
+        <div class="pullquote">
+            延伸不是漫无目的的跳转，而是让一次查询变成一次小小的探索。
+        </div>
+        <p>当然，延伸阅读的前提是信息准确。站内对每篇推荐都标注了原始来源或参考链接，不会凭空编造。</p>
+    </div>
+
+    <!-- 页尾访问提示 -->
+    <div class="footer-note">
+        <p>如果你也是那种习惯先查再玩、喜欢把不同信息放在一起比较的人，或许可以收藏 <a href="https://i-gamezh.com.cn">爱游戏</a> 作为日常参考站点。这里没有横幅广告和弹窗，也没有排行榜式的焦虑引导——只有可以随时查阅、对照、顺着读下去的游戏记录。希望你用得顺手。</p>
+        <p style="margin-top: 0.8rem; font-size: 0.88rem; color: #9b8c7c;">— 杂志专题 · 日常查询与延伸阅读 —</p>
+    </div>
+
+</body>
+</html>
