@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>壹号娱乐 · 博客笔记</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: linear-gradient(145deg, #fce9d8 0%, #f5d6c0 100%);
+            min-height: 100vh;
+            font-family: 'Georgia', 'Noto Serif SC', 'Times New Roman', serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            padding: 32px 18px 60px;
+            color: #3a2d24;
+        }
+
+        .page-card {
+            max-width: 820px;
+            width: 100%;
+            background: #fffcf8;
+            border-radius: 40px;
+            box-shadow: 0 16px 48px rgba(110, 60, 30, 0.12), 0 4px 12px rgba(80, 40, 15, 0.06);
+            padding: 48px 42px 52px;
+            backdrop-filter: blur(2px);
+            transition: box-shadow 0.25s;
+        }
+
+        @media (max-width: 600px) {
+            .page-card {
+                padding: 32px 20px 38px;
+                border-radius: 28px;
+            }
+            body {
+                padding: 16px 12px 40px;
+            }
+        }
+
+        .article-header {
+            margin-bottom: 32px;
+        }
+
+        .article-header h1 {
+            font-size: 2.4rem;
+            font-weight: 600;
+            letter-spacing: 2px;
+            color: #3b261b;
+            margin-bottom: 10px;
+            line-height: 1.2;
+            border-left: 6px solid #d9a37a;
+            padding-left: 20px;
+        }
+
+        .article-header .sub {
+            font-size: 0.95rem;
+            color: #8a6d58;
+            margin-left: 26px;
+            font-style: italic;
+            opacity: 0.8;
+        }
+
+        .guide {
+            background: #f9ede4;
+            border-radius: 30px;
+            padding: 20px 26px;
+            margin: 18px 0 28px;
+            font-size: 1.15rem;
+            line-height: 1.6;
+            color: #482f21;
+            border: 1px solid #ebd4c4;
+        }
+
+        .guide strong {
+            font-weight: 600;
+            color: #7a4f36;
+        }
+
+        p {
+            font-size: 1.05rem;
+            line-height: 1.78;
+            margin: 1.2em 0;
+            text-align: justify;
+            word-break: break-word;
+        }
+
+        .highlight-link {
+            background: #f1d9ca;
+            color: #3f2a1e;
+            padding: 1px 6px;
+            border-radius: 14px;
+            text-decoration: none;
+            font-weight: 500;
+            border-bottom: 2px solid #bd8d70;
+            transition: background 0.2s, color 0.2s;
+        }
+
+        .highlight-link:hover {
+            background: #d9b097;
+            color: #1f140f;
+            border-bottom-color: #9f6f4e;
+        }
+
+        .blockquote-tip {
+            border-left: 6px solid #d9a37a;
+            background: #f8f0e9;
+            padding: 16px 26px;
+            margin: 28px 0;
+            border-radius: 0 20px 20px 0;
+            font-size: 1.02rem;
+            color: #3f2e22;
+            box-shadow: 0 2px 6px rgba(150, 90, 50, 0.04);
+        }
+
+        .blockquote-tip::before {
+            content: "💡 备忘";
+            display: block;
+            font-weight: 600;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+            color: #8f674b;
+            margin-bottom: 6px;
+            text-transform: uppercase;
+        }
+
+        .action-sign {
+            margin-top: 38px;
+            padding-top: 28px;
+            border-top: 2px dashed #e4cfbd;
+            text-align: center;
+        }
+
+        .action-sign .tagline {
+            font-size: 1.3rem;
+            font-weight: 500;
+            color: #5f3f2e;
+            letter-spacing: 1px;
+        }
+
+        .action-sign .subnote {
+            font-size: 0.95rem;
+            color: #6e5543;
+            margin-top: 10px;
+            opacity: 0.85;
+        }
+
+        .visit-reminder {
+            background: #ede0d4;
+            display: inline-block;
+            padding: 6px 22px;
+            border-radius: 60px;
+            color: #2f1f16;
+            font-size: 0.9rem;
+            margin: 6px 0 10px;
+            letter-spacing: 0.5px;
+        }
+
+        hr {
+            border: none;
+            border-top: 1px solid #e5d4c6;
+            margin: 32px 0 18px;
+        }
+
+        .faq-mini {
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+            margin: 26px 0 10px;
+        }
+
+        .faq-item {
+            background: #fcf4ed;
+            padding: 14px 22px;
+            border-radius: 24px;
+            border: 1px solid #e6d1c0;
+        }
+
+        .faq-item .q {
+            font-weight: 600;
+            color: #4d3426;
+            display: block;
+            margin-bottom: 6px;
+            font-size: 1.05rem;
+        }
+
+        .faq-item .a {
+            color: #4d3a2e;
+            line-height: 1.6;
+            font-size: 0.98rem;
+        }
+
+        .footer-note {
+            margin-top: 34px;
+            font-size: 0.9rem;
+            color: #7d6655;
+            text-align: center;
+            border-top: 1px solid #e6d2c0;
+            padding-top: 24px;
+            letter-spacing: 0.3px;
+        }
+
+        .inline-code {
+            background: #f0e2d6;
+            padding: 1px 8px;
+            border-radius: 18px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="page-card">
+        <div class="article-header">
+            <h1>再次收藏 · 常访笔记</h1>
+            <div class="sub">从书签到习惯 · 关于持续关注的思路</div>
+        </div>
+
+        <div class="guide">
+            <strong>▎阅读提示</strong> 这篇文章围绕“收藏与回访”展开，不追求一次性浏览，而是探讨如何让一个值得关注的站点成为你信息源的一部分。文末附有简短 FAQ 和访问提示。
+        </div>
+
+        <p>
+            在信息过载的时代，我们每天都会遇见大量链接、平台和内容入口。多数页面被打开一次便沉入标签页深处，甚至消失在历史记录中。但有一种情形恰好相反——当你发现一个持续输出有质感内容的站点，你会不自觉地将其加入书签，并在几周后再次打开。这种“有意回访”的行为，实际上构建了属于自己的阅读节奏。对我而言，<a href="https://cnweb-1hao.com" class="highlight-link">壹号娱乐</a> 就是这样一个值得反复打开、慢慢翻看的节点。
+        </p>
+
+        <p>
+            回访不同于初访：首次访问往往是好奇驱动，带着探索和验证的心态；而再次访问则意味着你已经建立了初步的信任，并愿意给它更多时间。正因如此，收藏夹不应只是信息囤积的仓库，而应该成为你主动筛选后的“小径分岔的花园”。我在年初整理浏览器书签时，把那些超过三个月未打开的链接全部清空，唯独保留了十几条——其中就包括上文提到的那个名字。
+        </p>
+
+        <div class="blockquote-tip">
+            回访的秘诀不在于记住链接，而在于你赋予它的优先级。一个被反复打开的书签，本质上是一种无声的推荐。
+        </div>
+
+        <p>
+            持续关注某个信息源，意味着你认可它的风格、调性以及内容更新的节律。拿我常读的几个博客来说，有的每周二更新，有的不定期但每篇都很长，没有固定节奏反而让人期待。而像 <a href="https://cnweb-1hao.com" class="highlight-link">壹号娱乐</a> 这样的站点，它的吸引力在于内容既不追逐热点，也不刻意制造焦虑，读起来像跟一位知识面很广的朋友聊天。我习惯在周末晚上打开，配合一杯热茶，慢慢浏览最近更新的文章或整理。
+        </p>
+
+        <p>
+            收藏行为本身也是一种承诺——你对自己说，“这个值得再看一次”。但很多收藏夹最终变成了数字废墟。为了避免这种情况，我给自己定了一个小规则：每次收藏一个新链接，必须同时从书签里删除一个旧的。这种“一进一出”的机制迫使你不断审视自己的关注列表。结果很有趣：被留下来的那些，往往就是你在潜意识里真正关心的东西。
+        </p>
+
+        <hr>
+
+        <div class="faq-mini">
+            <div class="faq-item">
+                <span class="q">❓ 如何判断一个站点值得持续关注？</span>
+                <span class="a">看它的内容是否具有“非时效性价值”：即使你隔了一个月再读，依然觉得有收获。另外，更新频率稳定比频繁更重要，稳定的节奏更易形成阅读习惯。</span>
+            </div>
+            <div class="faq-item">
+                <span class="q">❓ 书签太多，如何高效管理？</span>
+                <span class="a">按主题建立文件夹（例如“资讯·娱乐”“工具·设计”“深度阅读”），每个文件夹不超过 8 个链接。超过则做一次取舍，保留最常访问的那个。</span>
+            </div>
+        </div>
+
+        <div class="action-sign">
+            <div class="visit-reminder">📌 常访 · 常新</div>
+            <div class="tagline">把书签变成一种习惯</div>
+            <div class="subnote">如果你还没有收藏，不妨花一分钟打开试试；<br>如果你已经来过，这次算是一次安静的再访。</div>
+            <div style="margin-top: 20px;">
+                <span class="inline-code">bookmark · 2025</span>
+            </div>
+        </div>
+
+        <div class="footer-note">
+            <span>页面于归途 · 关于收藏与重读的一点思考</span><br>
+            <span style="font-size: 0.8rem; opacity: 0.6;">不设时限，随时可访</span>
+        </div>
+    </div>
+</body>
+</html>
